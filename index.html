@@ -40,13 +40,13 @@
                     <h3>AI Engineering & Retrieval Systems</h3>
                 
                     <div class="project-item">
-                        <h4>Local-First Retrieval-Augmented Generation (RAG) System</h4>
+                        <h4>Self-RAG Document Question Answering System</h4>
                 
                         <p>
-                            Designed and implemented a fully local <strong>Retrieval-Augmented Generation (RAG)</strong>
-                            pipeline for private document question-answering. The system supports semantic retrieval
-                            over PDF and DOCX knowledge bases while preserving data privacy through on-device inference
-                            with open-source large language models.
+                            Developed a modular <strong>Self-Retrieval-Augmented Generation (Self-RAG)</strong>
+                            system for document-based question answering with source citations. The project supports
+                            PDF, DOCX, TXT, and Markdown ingestion, hybrid retrieval, reranking, and grounded answer
+                            generation through local or OpenAI-compatible LLM endpoints.
                         </p>
                 
                         <div class="badge-container">
@@ -60,43 +60,47 @@
                 
                         <ul class="project-details">
                             <li>
-                                <strong>RAG Pipeline:</strong>
-                                Implemented document ingestion, recursive text chunking,
-                                embedding generation, semantic retrieval, and context-aware answer generation.
+                                <strong>Backend:</strong> Built with <strong>Python</strong>, <strong>FastAPI</strong>,
+                                and <strong>Pydantic</strong> to provide document upload, query, and streaming APIs.
                             </li>
                 
                             <li>
-                                <strong>Framework & Orchestration:</strong>
-                                Built modular retrieval workflows using <strong>LangChain</strong>
-                                for chaining retrievers, prompts, and local LLM inference.
+                                <strong>Retrieval Pipeline:</strong> Implemented document ingestion, chunking,
+                                dense embeddings, BM25 sparse retrieval, hybrid retrieval with RRF fusion,
+                                and cross-encoder reranking.
                             </li>
                 
                             <li>
-                                <strong>Vector Search:</strong>
-                                Integrated <strong>ChromaDB</strong> for efficient vector storage,
-                                similarity search, and persistent knowledge indexing.
+                                <strong>Vector Indexing:</strong> Supported local vector search using
+                                <strong>InMemoryVectorIndex</strong> by default and optional
+                                <strong>FAISS</strong> backend for persistent similarity search.
                             </li>
                 
                             <li>
-                                <strong>Local LLM Inference:</strong>
-                                Deployed <strong>Llama 3</strong> models through
-                                <strong>Ollama</strong> to enable fully offline,
-                                low-latency inference without external APIs.
+                                <strong>LLM Integration:</strong> Integrated local or OpenAI-compatible LLM providers,
+                                including <strong>Ollama</strong>, <strong>vLLM</strong>, and <strong>SGLang</strong>,
+                                with Qwen used as a local demo model.
                             </li>
                 
                             <li>
-                                <strong>Privacy & Performance:</strong>
-                                Optimized the system for local-first execution,
-                                minimizing cloud dependency while maintaining responsive retrieval quality.
+                                <strong>Self-RAG Workflow:</strong> Designed standard, advanced, and compare modes
+                                with query rewriting, critique, retry/refine logic, citations, and fallback handling
+                                to reduce hallucination.
+                            </li>
+                
+                            <li>
+                                <strong>Frontend:</strong> Developed a <strong>React</strong>, <strong>Vite</strong>,
+                                and <strong>Tailwind CSS</strong> interface for document upload, querying, and
+                                displaying grounded responses.
                             </li>
                         </ul>
                 
                         <div class="project-image">
-                            <img src="RAG-pipeline.gif" alt="RAG Architecture Diagram">
+                            <img src="RAG.gif" alt="Self-RAG Pipeline Demo">
                 
                             <p class="image-caption">
-                                Figure 1: End-to-end local RAG workflow for document ingestion,
-                                semantic retrieval, and LLM-based response generation.
+                                Figure 1: Self-RAG workflow from document ingestion and hybrid retrieval
+                                to grounded LLM response generation.
                             </p>
                         </div>
                     </div>
